@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Farewell Aisling</title>
+<title>Slán, Aisling</title>
 <style>
     body {
         margin: 0;
@@ -25,10 +25,12 @@
         border-radius: 12px;
         background: white;
         box-shadow: 0 0 16px rgba(0,0,0,0.08);
-        background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Celtic-knot-insquare.svg/512px-Celtic-knot-insquare.svg.png');
-        background-repeat: no-repeat;
-        background-position: top right;
-        background-size: 120px;
+        background-image:
+            url('https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Celtic-knot-insquare.svg/512px-Celtic-knot-insquare.svg.png'),
+            url('https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Mercedes_star_2010.svg/240px-Mercedes_star_2010.svg.png');
+        background-repeat: no-repeat, no-repeat;
+        background-position: top right, bottom left;
+        background-size: 120px, 80px;
     }
 
     h1 {
@@ -50,10 +52,17 @@
         margin-top: 30px;
     }
 
+    .signature {
+        margin-top: 40px;
+        font-size: 1.1em;
+        color: #0f3c2e;
+        font-weight: bold;
+    }
+
     .video-wrapper {
         position: relative;
         width: 100%;
-        padding-bottom: 56.25%; /* 16:9 ratio */
+        padding-bottom: 56.25%; /* 16:9 */
         height: 0;
         overflow: hidden;
         border-radius: 12px;
@@ -75,7 +84,7 @@
 <body>
 <div class="container">
     <div class="celtic-frame">
-        <h1>Farewell, Aisling</h1>
+        <h1>Slán, Aisling</h1>
         <h2>“May the road rise to meet you.”</h2>
 
         <div class="video-wrapper">
@@ -88,6 +97,10 @@
             Aisling, your leadership made our team stronger,<br>
             your kindness made our days brighter, and your support meant more than you know.<br><br>
             We’ll miss you — go smash it in your new role.
+        </div>
+
+        <div class="signature">
+            — TEV Team
         </div>
     </div>
 </div>
