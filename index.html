@@ -7,27 +7,11 @@
     body {
         margin: 0;
         padding: 0;
-        background: #050608; /* Black background */
+        background: #050608;
         font-family: "Segoe UI", sans-serif;
         color: #f4fff4;
         text-align: center;
         position: relative;
-    }
-
-    /* Large faint Mercedes watermark */
-    body::before {
-        content: "";
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        width: 500px;
-        height: 500px;
-        transform: translate(-50%, -50%);
-        background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Mercedes_star_2010.svg/600px-Mercedes_star_2010.svg.png');
-        background-size: contain;
-        background-repeat: no-repeat;
-        opacity: 0.05;
-        z-index: -2;
     }
 
     .container {
@@ -73,7 +57,6 @@
         right: -20px;
     }
 
-    /* Subtle Celtic band at top & bottom */
     .celtic-band {
         height: 8px;
         margin: 4px 0 18px 0;
@@ -102,42 +85,8 @@
         font-size: 1.2em;
         font-weight: 300;
         color: #d0f5dd;
-        margin-bottom: 10px;
-        font-style: italic;
-    }
-
-    .subtitle-irish {
-        font-size: 0.95em;
-        color: #8dd7a0;
         margin-bottom: 24px;
-        opacity: 0.85;
-    }
-
-    .message {
-        font-size: 1.15em;
-        line-height: 1.7;
-        margin-top: 30px;
-        margin-bottom: 20px;
-        color: #f6fff7;
-    }
-
-    .mercedes-small {
-        margin-top: 6px;
-        margin-bottom: 25px;
-        opacity: 0.65;
-    }
-
-    .mercedes-small img {
-        width: 60px;
-        filter: drop-shadow(0 0 4px #00ffaa);
-    }
-
-    .signature {
-        margin-top: 12px;
-        font-size: 1.05em;
-        color: #9be7b0;
-        font-weight: bold;
-        letter-spacing: 0.05em;
+        font-style: italic;
     }
 
     .video-wrapper {
@@ -160,6 +109,29 @@
         height: 100%;
         border: 0;
     }
+
+    .message {
+        font-size: 1.15em;
+        line-height: 1.75;
+        margin-top: 35px;
+        margin-bottom: 30px;
+        color: #f6fff7;
+        padding: 0 10px;
+        text-align: left;
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .signature {
+        margin-top: 12px;
+        font-size: 1.05em;
+        color: #9be7b0;
+        font-weight: bold;
+        letter-spacing: 0.05em;
+        margin-bottom: 10px;
+    }
+
 </style>
 </head>
 
@@ -170,24 +142,27 @@
 
         <h1>Slán, Aisling</h1>
         <h2>“May the road rise to meet you.”</h2>
-        <div class="subtitle-irish">
-            From your TEV family, with a touch of green and a three-pointed star.
-        </div>
 
+        <!-- VIDEO -->
         <div class="video-wrapper">
             <iframe src="https://streamable.com/e/jw50lh"
                 frameborder="0" allowfullscreen>
             </iframe>
         </div>
 
+        <!-- LONG HEARTFELT MESSAGE -->
         <div class="message">
-            Aisling, your leadership made our team stronger,<br>
-            your kindness made our days brighter, and your support meant more than you know.<br><br>
-            We’ll miss you — go smash it in your new role.
-        </div>
+            Aisling, thank you for the kindness, patience, and strength you brought into our team every single day.
+            You created a space where people felt heard, supported, and encouraged to grow — and that will stay with us long after this goodbye.<br><br>
 
-        <div class="mercedes-small">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Mercedes_star_2010.svg/240px-Mercedes_star_2010.svg.png" alt="Mercedes-Benz star">
+            Your leadership was never just about tasks or deadlines; it was about people, and we felt that.
+            You lifted us when things were heavy, you guided us when things were unclear, and you treated everyone with a genuine heart.<br><br>
+
+            We’re proud of everything you achieved with us, and even more proud of the person you were while doing it.
+            As you move into your new role, may the road rise to meet you, and may you carry with you all the good you’ve left behind here.<br><br>
+
+            We’ll miss you — but we’re excited to see where your journey takes you next.  
+            Go smash it, Aisling.
         </div>
 
         <div class="signature">
