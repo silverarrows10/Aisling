@@ -7,67 +7,149 @@
     body {
         margin: 0;
         padding: 0;
-        background: #f5f9f6;
+        background: #050608; /* Black background */
         font-family: "Segoe UI", sans-serif;
-        color: #1f2d1f;
+        color: #f4fff4;
         text-align: center;
+        position: relative;
+    }
+
+    /* Large faint Mercedes watermark */
+    body::before {
+        content: "";
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        width: 500px;
+        height: 500px;
+        transform: translate(-50%, -50%);
+        background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Mercedes_star_2010.svg/600px-Mercedes_star_2010.svg.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        opacity: 0.05;
+        z-index: -2;
     }
 
     .container {
         max-width: 900px;
         margin: 0 auto;
         padding: 40px 20px;
+        position: relative;
+        z-index: 2;
     }
 
     .celtic-frame {
-        border: 8px solid #1b4d3e;
+        border: 2px solid #25b36a;
         padding: 25px;
-        border-radius: 12px;
-        background: white;
-        box-shadow: 0 0 16px rgba(0,0,0,0.08);
-        background-image:
-            url('https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Celtic-knot-insquare.svg/512px-Celtic-knot-insquare.svg.png'),
-            url('https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Mercedes_star_2010.svg/240px-Mercedes_star_2010.svg.png');
-        background-repeat: no-repeat, no-repeat;
-        background-position: top right, bottom left;
-        background-size: 120px, 80px;
+        border-radius: 18px;
+        background: radial-gradient(circle at top, #111920 0, #050608 60%);
+        box-shadow: 0 0 30px rgba(0, 0, 0, 0.9);
+        position: relative;
+        overflow: hidden;
+    }
+
+    /* Celtic corner ornaments */
+    .celtic-frame::before,
+    .celtic-frame::after {
+        content: "";
+        position: absolute;
+        width: 120px;
+        height: 120px;
+        background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Celtic-knot-insquare.svg/512px-Celtic-knot-insquare.svg.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        opacity: 0.25;
+        filter: drop-shadow(0 0 6px #00ff9c);
+        pointer-events: none;
+    }
+
+    .celtic-frame::before {
+        top: -20px;
+        left: -20px;
+    }
+
+    .celtic-frame::after {
+        bottom: -20px;
+        right: -20px;
+    }
+
+    /* Subtle Celtic band at top & bottom */
+    .celtic-band {
+        height: 8px;
+        margin: 4px 0 18px 0;
+        background-image: linear-gradient(
+            90deg,
+            #25b36a 0%,
+            #9be7b0 20%,
+            #25b36a 40%,
+            #9be7b0 60%,
+            #25b36a 80%,
+            #9be7b0 100%
+        );
+        mask-image: linear-gradient(90deg, transparent, black 15%, black 85%, transparent);
+        opacity: 0.85;
+        border-radius: 999px;
     }
 
     h1 {
         font-size: 2.5em;
-        margin-bottom: 10px;
-        color: #0f3c2e;
+        margin-bottom: 6px;
+        color: #9be7b0;
+        letter-spacing: 0.04em;
     }
 
     h2 {
-        font-size: 1.4em;
+        font-size: 1.2em;
         font-weight: 300;
-        color: #355d47;
-        margin-bottom: 30px;
+        color: #d0f5dd;
+        margin-bottom: 10px;
+        font-style: italic;
+    }
+
+    .subtitle-irish {
+        font-size: 0.95em;
+        color: #8dd7a0;
+        margin-bottom: 24px;
+        opacity: 0.85;
     }
 
     .message {
-        font-size: 1.2em;
-        line-height: 1.6;
+        font-size: 1.15em;
+        line-height: 1.7;
         margin-top: 30px;
+        margin-bottom: 20px;
+        color: #f6fff7;
+    }
+
+    .mercedes-small {
+        margin-top: 6px;
+        margin-bottom: 25px;
+        opacity: 0.65;
+    }
+
+    .mercedes-small img {
+        width: 60px;
+        filter: drop-shadow(0 0 4px #00ffaa);
     }
 
     .signature {
-        margin-top: 40px;
-        font-size: 1.1em;
-        color: #0f3c2e;
+        margin-top: 12px;
+        font-size: 1.05em;
+        color: #9be7b0;
         font-weight: bold;
+        letter-spacing: 0.05em;
     }
 
     .video-wrapper {
         position: relative;
         width: 100%;
-        padding-bottom: 56.25%; /* 16:9 */
+        padding-bottom: 56.25%;
         height: 0;
         overflow: hidden;
-        border-radius: 12px;
-        margin-top: 30px;
-        box-shadow: 0 0 10px rgba(0,0,0,0.15);
+        border-radius: 16px;
+        margin-top: 22px;
+        box-shadow: 0 0 25px rgba(0, 0, 0, 0.9);
+        border: 1px solid rgba(144, 255, 187, 0.25);
     }
 
     .video-wrapper iframe {
@@ -84,8 +166,13 @@
 <body>
 <div class="container">
     <div class="celtic-frame">
+        <div class="celtic-band"></div>
+
         <h1>Slán, Aisling</h1>
         <h2>“May the road rise to meet you.”</h2>
+        <div class="subtitle-irish">
+            From your TEV family, with a touch of green and a three-pointed star.
+        </div>
 
         <div class="video-wrapper">
             <iframe src="https://streamable.com/e/jw50lh"
@@ -99,9 +186,15 @@
             We’ll miss you — go smash it in your new role.
         </div>
 
+        <div class="mercedes-small">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Mercedes_star_2010.svg/240px-Mercedes_star_2010.svg.png" alt="Mercedes-Benz star">
+        </div>
+
         <div class="signature">
             — TEV Team
         </div>
+
+        <div class="celtic-band"></div>
     </div>
 </div>
 </body>
